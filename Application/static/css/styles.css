@@ -15,11 +15,11 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 
   /* Visual */
-  background-color: black;
+  background-color: white;
 }
 
 .container {
-  background-color: black;
+  background-color: white;
 }
 
 /* Media query for body */
@@ -287,4 +287,3 @@ body {
 
 /* ----FOOTER END---- */
 
-  <!-- # test -->

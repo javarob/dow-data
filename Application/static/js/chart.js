@@ -1,7 +1,7 @@
 function buildMetadata(year) {
 
     // Use `d3.json` to Fetch the Metadata for a Sample
-    d3.json(`/metadata/${year}`).then((data) => {
+    d3.json(`/stockdata`).then((data) => {
 
         // Select the Panel with id of `#sample-metadata`
         var sampleMD = d3.select("#sample-metadata");
@@ -20,7 +20,7 @@ function buildCharts(sample) {
 
     // Use `d3.json` to fetch the sample data for the plots
 
-    d3.json(`/samples/${sample}`).then((data) => {
+    d3.json(`/stockdata`).then((data) => {
         // Build a Bubble Chart using the sample data
         var trace1 = {
             x: data.otu_ids,
@@ -94,7 +94,7 @@ function optionChanged(newSample) {
 
 // Initialize the dashboard
 init();
-Collapse
+// Collapse
 
 
 

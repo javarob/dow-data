@@ -51,20 +51,40 @@ def stockdata():
     return jsonify(newdata)
 
 
+# @app.route('/years')
+# def getyears():
+#     engine = create_engine('postgresql://postgres:' +
+#                            password + '@localhost:5432/tbm')
+#     data = engine.execute(
+#         "select distinct date_part('year',date) as date from stock_data order by date;")
+#     newdata = []
+
+#     for x in data:
+#         d = {
+#             'year': x[0]
+#         }
+#         newdata.append(d)
+
+#     return jsonify(newdata)
+
+
 @app.route('/years')
+def get_year_page():
+    return render_template("years.html")
+
+
+@app.route('/api/years')
 def getyears():
     engine = create_engine('postgresql://postgres:' +
                            password + '@localhost:5432/tbm')
     data = engine.execute(
         "select distinct date_part('year',date) as date from stock_data order by date;")
     newdata = []
-
     for x in data:
         d = {
             'year': x[0]
         }
         newdata.append(d)
-
     return jsonify(newdata)
 
 
